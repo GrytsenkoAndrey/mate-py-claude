@@ -159,3 +159,5 @@ Before you submit, make sure that:
 ---
 
 **How this is checked:** a reviewer opens your branch and works down the Definition of Done. The aim isn't a perfect file — it's a `CLAUDE.md` and permission set that would genuinely save time on this project, with clear reasoning behind what you kept and what you cut.
+
+---

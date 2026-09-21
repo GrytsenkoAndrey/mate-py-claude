@@ -1,0 +1,30 @@
+services:
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+      args:
+        CLAUDE_CODE_VERSION: ${CLAUDE_CODE_VERSION:-latest}
+        CODEX_VERSION: ${CODEX_VERSION:-latest}
+    image: mate-py-claude:latest
+    container_name: mate-py-claude-app
+    user: tcc
+    working_dir: /app
+    ports:
+      - "${APP_PORT:-3000}:3000"
+    environment:
+      NODE_ENV: ${NODE_ENV:-development}
+      PORT: 3000
+      ANTHROPIC_API_KEY: ${ANTHROPIC_API_KEY:-}
+      OPENAI_API_KEY: ${OPENAI_API_KEY:-}
+    volumes:
+      - .:/app
+      - node_modules:/app/node_modules
+      - ./.claude:/home/tcc/.claude
+      - ./.codex:/home/tcc/.codex
+    stdin_open: true
+    tty: true
+    command: npm run dev
+
+volumes:
+  node_modules:

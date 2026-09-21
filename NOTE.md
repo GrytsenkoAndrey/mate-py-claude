@@ -1,0 +1,3 @@
+# My Choice
+
+I choose to use Docker because I don't want to install and configure all the dependencies manually on my local machine. Docker allows me to create a consistent environment that can be easily shared and deployed across different systems. It also simplifies the process of managing dependencies and ensures that my application runs the same way in development, testing, and production environments.

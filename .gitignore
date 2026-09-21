@@ -5,3 +5,10 @@ node_modules/
    # Personal Claude Code settings stay on your machine; the shared
    # .claude/settings.json is committed, but this local override is not.
    .claude/settings.local.json
+/.claude/.credentials.json
+
+# .claude/ doubles as the container's ~/.claude (see docker-compose.yml),
+# so all of Claude Code's local state lands here. Ignore everything except
+# the shared settings.json.
+.claude/*
+!.claude/settings.json
